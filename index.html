@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoTask - Smart Task Planner</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f1226, #1c1f4a);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Glow Background */
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #6c63ff55, transparent);
+    top: -100px;
+    left: -100px;
+    filter: blur(100px);
+}
+
+header {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    background: linear-gradient(45deg, #6c63ff, #00d4ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+header p {
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* 3D Card */
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 20px;
+    margin: 20px;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px #6c63ff40;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Features */
+.feature {
+    width: 300px;
+}
+
+/* Button */
+.btn {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #6c63ff, #00d4ff);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Contact */
+.contact {
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SoTask</h1>
+    <p>Plan Smarter, Achieve More</p>
+</header>
+
+<section class="container">
+
+    <div class="card feature">
+        <h3>📌 Smart Task Management</h3>
+        <p>Easily create, track, and manage tasks efficiently.</p>
+    </div>
+
+    <div class="card feature">
+        <h3>⚡ Quick Add</h3>
+        <p>Add tasks instantly with reminders and priorities.</p>
+    </div>
+
+    <div class="card feature">
+        <h3>🌙 Dark Mode</h3>
+        <p>Modern UI with beautiful dark & light themes.</p>
+    </div>
+
+    <div class="card feature">
+        <h3>🔍 Search & Filter</h3>
+        <p>Sort, search, and filter tasks easily.</p>
+    </div>
+
+</section>
+
+<section class="contact">
+    <div class="card">
+        <h2>Contact Us</h2>
+
+        <form id="contact-form">
+            <input type="text" name="user_name" placeholder="Your Name" required>
+            <input type="email" name="user_email" placeholder="Your Email" required>
+            <input type="text" name="user_whatsapp" placeholder="WhatsApp (Optional)">
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" placeholder="Message" rows="5" required></textarea>
+
+            <button class="btn" type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    © 2026 SoTask | Built with ❤️
+</footer>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("YOUR_PUBLIC_KEY"); // replace
+})();
+
+document.getElementById("contact-form")
+.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        this
+    ).then(() => {
+        alert("Message Sent Successfully!");
+    }, (error) => {
+        alert("Failed to send message");
+    });
+});
+</script>
+
+</body>
+</html>
