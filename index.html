@@ -172,6 +172,10 @@
             letter-spacing: 1px;
         }
 
+        .glow-btn i {
+            margin-right: 8px;
+        }
+
         .glow-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 0 30px var(--accent-glow), 0 0 60px var(--accent-glow);
@@ -257,14 +261,37 @@
     </section>
 
     <section class="support-section">
-        <div class="glass-card support-card">
-            <h2>Need Help?</h2>
-            <p>Have a question about SoTask or want to report a bug? Reach out to the developer directly.</p>
-            <a href="https://sodevx.github.io/#contact" class="glow-btn">
-                <i class="fas fa-headset"></i> Contact Support
+    <div class="glass-card support-card">
+        <h2>Download SoTask</h2>
+        <p>Get SoTask from your preferred app store and start planning smarter.</p>
+
+        <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
+
+            <!-- Indus App Store -->
+            <a href="https://www.indusappstore.com/apps/productivity/sotask/com.sodevx.sotask/?page=details&id=com.sodevx.sotask"
+               target="_blank" class="glow-btn">
+                <i class="fas fa-download"></i> Download from Indus App Store
             </a>
+
+            <!-- Amazon Appstore -->
+            <a href="https://www.amazon.in/SoDevX-SoTask-Smart-Task-Planner/dp/B0GTZXWNJK"
+               target="_blank" class="glow-btn">
+                <i class="fab fa-amazon"></i> Download from Amazon Appstore
+            </a>
+
         </div>
-    </section>
+
+        <br>
+
+        <p style="font-size: 0.9rem; opacity: 0.8;">
+            Need help or want to report a bug?
+        </p>
+
+        <a href="https://sodevx.github.io/#contact" class="glow-btn">
+            <i class="fas fa-headset"></i> Contact Support
+        </a>
+    </div>
+</section>
 
     <footer>
         <div class="legal-links">
